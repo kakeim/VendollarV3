@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VendollarV3</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="title_activity_coupon_popup1">coupon_popup1</string>
+    <string name="title_activity_coupon_popup2">coupon_popup2</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+</resources>
