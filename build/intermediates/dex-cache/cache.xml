@@ -1,2 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_876ef66ee9ccc5ec3abfaf9fd43a9c057e3fbb5a.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.kontakt.sdk.android/kontakt.io-android-sdk/2.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2f5e56479b83a74177299b2495befa07bf49b38d">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/com.kontakt.sdk.android-kontakt.io-android-sdk-2.1.1_b93d2f5536066d76f766abe4853d9b41cbc2acbe.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_0439d4f2dfa449f87f40313c915156335a498a49.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_7102768eaea8830631ce89afea691b80b7ad2c1f.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/okhttp-2.5.0_ecb54c61bafc33d00386733a929b243b8782073c.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.kontakt.sdk.android/kontakt.io-api-client/2.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d07ba0140957606dac9418fe07db359cb282da88">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/com.kontakt.sdk.android-kontakt.io-api-client-2.1.1_95adef97bf16bcc1e2f850d8be29f6e0541d54a5.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.kontakt.sdk.android/kontakt.io-ble-sdk/2.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="896cef980986332feb76fe93880e564cfc4cf816">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/com.kontakt.sdk.android-kontakt.io-ble-sdk-2.1.1_eee5ea4d926b6bf5062b97e5a01385ab638c01a3.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_879b96230867bc1390705dccc89fb22f164a8b86.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_1226f11e450d22a9c7978916339dca7263a8e878.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_eda59fef335cfca2693ddea55ac65c505d50a13f.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/exploded-aar/com.kontakt.sdk.android/kontakt.io-common-sdk/2.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d8818a8f07f3ec4b5372721c318c462e8bed0ad9">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/com.kontakt.sdk.android-kontakt.io-common-sdk-2.1.1_ba7dba6add9ff3c718e8d4db8db01de457c9e9ea.jar" />
+    </item>
+    <item
+        jar="/Users/zpsmith/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/zpsmith/Documents/VendollarV3_me/app/build/intermediates/pre-dexed/debug/okio-1.6.0_d6eeaaebeae96774d7e9c5255a0fab9a3b5ef23c.jar" />
+    </item>
+
+</items>
