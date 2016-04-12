@@ -32,7 +32,7 @@ public class Splash extends Activity {
             switch (msg.what) {
                 case STOPSPLASH:
                     //remove SplashScreen from view
-                    splash.setVisibility(View.GONE);
+                    //splash.setVisibility(View.GONE);
                     Intent i = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(i);
                     break;

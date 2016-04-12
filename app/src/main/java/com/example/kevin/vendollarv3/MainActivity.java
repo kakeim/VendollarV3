@@ -146,12 +146,12 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
             public void onClick(DialogInterface dialog, int which) {
                 // User Accepted the coupon
                 if(whichCoupon) {
-                    couponName.add("Coupon 1");
-                    couponImg.add(R.drawable.coupon1);
-                }
-                else {
                     couponName.add("Coupon 2");
                     couponImg.add(R.drawable.coupon2);
+                }
+                else {
+                    couponName.add("Coupon 1");
+                    couponImg.add(R.drawable.coupon1);
                 }
 
                 ListView lv = (ListView) findViewById(R.id.couponListView);
