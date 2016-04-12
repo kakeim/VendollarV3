@@ -4,14 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kevin.vendollarv3.Splash"
-    tools:showIn="@layout/activity_splash">
+    tools:showIn="@layout/activity_splash"
+    android:background="@drawable/splashscreen">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="fill_parent"
         android:layout_height="fill_parent">
-        <ImageView android:id="@+id/splashscreen" android:layout_width="wrap_content"
-            android:layout_height="fill_parent" android:src="@drawable/splashscreen"
-            android:layout_gravity="center"/>
+
     </LinearLayout>
 
 </RelativeLayout>
