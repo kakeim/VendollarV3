@@ -25,9 +25,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -72,7 +74,12 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
     private ProximityManagerContract proximityManager;
     String beaconString;
     boolean foundCount = true;
+    ArrayList<String> couponList = new ArrayList<String>();
+    private static Context context;
+    private Activity activity = (Activity) this;
 
+    ArrayList<String> couponName = new ArrayList<String>();
+    ArrayList<Integer> couponImg= new ArrayList<Integer>();
 
     //CharSequence text = new StringBuffer("----------");
 
@@ -125,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
     //        .setEddystoneScanContext(eddystoneScanContext)
     //        .build();
 
-    public Dialog gimmePopuzz(boolean whichCoupon) {
+    public Dialog gimmePopuzz(final boolean whichCoupon) {
         // Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         final View view;
@@ -138,6 +145,19 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // User Accepted the coupon
+                if(whichCoupon) {
+                    couponName.add("Coupon 2");
+                    couponImg.add(R.drawable.coupon2);
+                }
+                else {
+                    couponName.add("Coupon 1");
+                    couponImg.add(R.drawable.coupon1);
+                }
+
+                ListView lv = (ListView) findViewById(R.id.couponListView);
+                CustomListAdapter adapter = new CustomListAdapter(activity,couponName,couponImg);
+                lv.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
         });
 
@@ -172,6 +192,7 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
         proximityManager = new KontaktProximityManager(this);
         //tv = (TextView)findViewById(R.id.textView);
         // et1 = (EditText)findViewById(R.id.textView);
+        MainActivity.context = getApplicationContext();
     }
 
     @Override
