@@ -76,8 +76,10 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
     private static final String TAG = MainActivity.class.getSimpleName();
     private ProximityManagerContract proximityManager;
     String beaconString;
-    int price;
-    boolean foundCount = true;
+    static int price;
+
+    int foundCount = 0;
+
     ArrayList<String> couponList = new ArrayList<String>();
     private static Context context;
     private Activity activity = (Activity) this;
@@ -88,9 +90,9 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
     static final String COUPON_NAME = "name";
     static final String COUPONE_IMG = "image";
 
-    public ArrayList<String> couponName = new ArrayList<String>();
-    public ArrayList<Integer> couponImg= new ArrayList<Integer>();
-    public ArrayList<String> couponDesc = new ArrayList<String>();
+    public static ArrayList<String> couponName = new ArrayList<String>();
+    public static ArrayList<Integer> couponImg= new ArrayList<Integer>();
+    public static ArrayList<String> couponDesc = new ArrayList<String>();
     private View b;
     //Context context = (Context)this;
 
@@ -218,6 +220,17 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
         proximityManager = new KontaktProximityManager(this);
         MainActivity.context = getApplicationContext();
 
+        // Make sure price stays if we return to main activity
+        TextView tv = (TextView)findViewById(R.id.textView2);
+        tv.setText("Total Saved: $" + price + ".00");
+        tv.invalidate();
+
+        // Make sure coupon list stays if we return to main activity
+        lv = (ListView) findViewById(R.id.couponListView);
+        adapter = new CustomListAdapter(activity, couponName, couponImg, couponDesc);
+        lv.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
         b = findViewById(R.id.imageButton);
 
         b.setOnClickListener(new View.OnClickListener() {
@@ -333,28 +346,45 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
 
         switch (bluetoothDeviceEvent.getEventType()) {
             case SPACE_ENTERED:
-                beaconString = "In Beacon Range";
+                //beaconString = "In Beacon Range";
                 //tv.setText(beaconString);
-                tv.invalidate();
+                //tv.invalidate();
                 Log.d(TAG, "namespace or region entered");
                 break;
             case DEVICE_DISCOVERED:
-                beaconString = "Found Beacon ";
-                tv.setText(beaconString);
-                tv.invalidate();
+                //beaconString = "Found Beacon ";
+                //tv.setText(beaconString);
+                //tv.invalidate();
                 Log.d(TAG, "found new beacon");
 
-                //Coupon
+                Dialog couponDialog;
+
+                switch(foundCount) {
+                    case 0:
+                        couponDialog= gimmePopuzz(true);
+                        couponDialog.show();
+                        foundCount++;
+                        break;
+                    case 1:
+                        couponDialog = gimmePopuzz(false);
+                        couponDialog.show();
+                        foundCount++;
+                        break;
+                    default:
+                        break;
+                }
+
+                /*//Coupon
                 if(foundCount) {
-                    Dialog couponDialog = gimmePopuzz(true);
+                    couponDialog = gimmePopuzz(true);
                     couponDialog.show();
                     foundCount = false;
                 }
                 else {
-                    Dialog couponDialog = gimmePopuzz(false);
+                    couponDialog = gimmePopuzz(false);
                     couponDialog.show();
                     foundCount = true;
-                }
+                }*/
                 break;
             case DEVICES_UPDATE:
                 Log.d(TAG, "updated beacons");
@@ -384,9 +414,9 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
             }
 
         if(beaconLost) {
-            beaconString = "beacon lost";
-            tv.setText(beaconString);
-            tv.invalidate();
+            //beaconString = "beacon lost";
+            //tv.setText(beaconString);
+            //tv.invalidate();
             Log.d(TAG, "beacon lost?");
         }
     }

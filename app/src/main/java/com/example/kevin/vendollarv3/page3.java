@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
 public class page3 extends AppCompatActivity {
 
@@ -29,11 +30,13 @@ public class page3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page3);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         page3.context = getApplicationContext();
         b = findViewById(R.id.imageButton);
+
+        TextView tv = (TextView)findViewById(R.id.textView3);
+        tv.setText("You are saving $" + MainActivity.price + ".00 today");
+        tv.invalidate();
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override
