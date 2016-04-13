@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.bluetooth.le.ScanResult;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.Image;
 import android.os.Bundle;
@@ -80,10 +81,16 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
     private static Context context;
     private Activity activity = (Activity) this;
 
-    ArrayList<String> couponName = new ArrayList<String>();
-    ArrayList<Integer> couponImg= new ArrayList<Integer>();
-    View b;
-    Context context = (Context)this;
+    public CustomListAdapter adapter;
+    public ListView lv;
+
+    static final String COUPON_NAME = "name";
+    static final String COUPONE_IMG = "image";
+
+    public ArrayList<String> couponName = new ArrayList<String>();
+    public ArrayList<Integer> couponImg= new ArrayList<Integer>();
+    private View b;
+    //Context context = (Context)this;
 
     //CharSequence text = new StringBuffer("----------");
 
@@ -149,17 +156,16 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // User Accepted the coupon
-                if(whichCoupon) {
+                if (whichCoupon) {
                     couponName.add("Coupon 2");
                     couponImg.add(R.drawable.coupon2);
-                }
-                else {
+                } else {
                     couponName.add("Coupon 1");
                     couponImg.add(R.drawable.coupon1);
                 }
 
-                ListView lv = (ListView) findViewById(R.id.couponListView);
-                CustomListAdapter adapter = new CustomListAdapter(activity,couponName,couponImg);
+                lv = (ListView) findViewById(R.id.couponListView);
+                adapter = new CustomListAdapter(activity, couponName, couponImg);
                 lv.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
@@ -187,6 +193,7 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
         return builder.create();
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -209,18 +216,26 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
                 // Registering popup with OnMenuItemClickListener
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item){
+                    public boolean onMenuItemClick(MenuItem item) {
                         LayoutInflater inflater = getLayoutInflater();
                         final View view;
+                        Intent intent;
                         switch (item.getItemId()) {
+                            case R.id.home:
+                                //intent = new Intent(context, MainActivity.class);
+                                //startActivity(intent);
+                                return true;
                             case R.id.recipes:
-                                setContentView(inflater.inflate(R.layout.content_page1, null));
+                                intent = new Intent(context, page1.class);
+                                startActivity(intent);
                                 return true;
                             case R.id.fotw:
-                                setContentView(inflater.inflate(R.layout.content_page2,null));
+                                intent = new Intent(context, page2.class);
+                                startActivity(intent);
                                 return true;
                             case R.id.checkout:
-                                setContentView(inflater.inflate(R.layout.content_page3,null));
+                                intent = new Intent(context, page3.class);
+                                startActivity(intent);
                                 return true;
                             default:
                                 return false;
@@ -269,6 +284,7 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
         proximityManager.detachListener(this);
         proximityManager.disconnect();
     }
+
 
     private ScanContext getScanContext() {
         if (scanContext == null) {
