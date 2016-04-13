@@ -13,25 +13,6 @@
     tools:context="com.example.kevin.vendollarv3.page1"
     tools:showIn="@layout/activity_page1">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:popupTheme="@style/AppTheme.PopupOverlay" >
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:id="@+id/imageButton"
-            android:src="@drawable/menubutton1"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:nestedScrollingEnabled="false" />
-    </android.support.v7.widget.Toolbar>
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
