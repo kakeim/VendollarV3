@@ -6,4 +6,7 @@
     <string name="title_activity_coupon_popup2">coupon_popup2</string>
     <string name="accept">Accept</string>
     <string name="decline">Decline</string>
+    <string name="title_activity_page1">page1</string>
+    <string name="title_activity_page2">page2</string>
+    <string name="title_activity_page3">page3</string>
 </resources>
