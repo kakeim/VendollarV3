@@ -8,8 +8,24 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.kevin.vendollarv3.page2"
     tools:showIn="@layout/activity_page2">
+
+    <ImageView
+        android:id="@+id/fotwImg"
+        android:layout_width="match_parent"
+        android:layout_height="1.8in"
+        android:background="@drawable/fotwimg"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="2.2in"
+        android:id="@+id/fotwDesc"
+        android:layout_below="@+id/fotwImg"
+        android:background="@drawable/fotwdesc"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

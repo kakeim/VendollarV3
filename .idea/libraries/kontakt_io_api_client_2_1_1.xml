@@ -5,8 +5,6 @@
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.kontakt.sdk.android/kontakt.io-api-client/2.1.1/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kontakt.sdk.android/kontakt.io-api-client/2.1.1/e4e8b5ffd4a490f1c10a132c5931c6e5815dbc4c/kontakt.io-api-client-2.1.1-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
