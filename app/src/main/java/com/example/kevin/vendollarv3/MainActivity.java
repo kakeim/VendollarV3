@@ -26,10 +26,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -80,6 +82,8 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
 
     ArrayList<String> couponName = new ArrayList<String>();
     ArrayList<Integer> couponImg= new ArrayList<Integer>();
+    View b;
+    Context context = (Context)this;
 
     //CharSequence text = new StringBuffer("----------");
 
@@ -187,12 +191,48 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         KontaktSDK.initialize("wvFaZmilypJIauSMJMYDQEDCekHhoyTc");
         ConnectActivity connectActivity = new ConnectActivity();
         proximityManager = new KontaktProximityManager(this);
-        //tv = (TextView)findViewById(R.id.textView);
-        // et1 = (EditText)findViewById(R.id.textView);
         MainActivity.context = getApplicationContext();
+
+        b = findViewById(R.id.imageButton);
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Creating the instance of PopupMenu
+                PopupMenu popup = new PopupMenu(MainActivity.this, b);
+
+                // Inflating the popup using xml file
+                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+                // Registering popup with OnMenuItemClickListener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item){
+                        LayoutInflater inflater = getLayoutInflater();
+                        final View view;
+                        switch (item.getItemId()) {
+                            case R.id.recipes:
+                                setContentView(inflater.inflate(R.layout.content_page1, null));
+                                return true;
+                            case R.id.fotw:
+                                setContentView(inflater.inflate(R.layout.content_page2,null));
+                                return true;
+                            case R.id.checkout:
+                                setContentView(inflater.inflate(R.layout.content_page3,null));
+                                return true;
+                            default:
+                                return false;
+                        }
+
+                    }
+                });
+
+                // Showing the popup menu
+                popup.show();
+            }
+        });
     }
 
     @Override
@@ -376,4 +416,5 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
             }
         });
     }
+
 }

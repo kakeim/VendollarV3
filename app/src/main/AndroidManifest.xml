@@ -36,6 +36,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -43,14 +44,33 @@
         <activity
             android:name=".coupon_popup1"
             android:label="@string/title_activity_coupon_popup1"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
 
         <activity
             android:name=".coupon_popup2"
             android:label="@string/title_activity_coupon_popup2"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".page1"
+            android:label="@string/title_activity_page1"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
+        <activity
+            android:name=".page2"
+            android:label="@string/title_activity_page2"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".page3"
+            android:label="@string/title_activity_page3"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

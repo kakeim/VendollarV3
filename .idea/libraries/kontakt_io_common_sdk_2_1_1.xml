@@ -5,6 +5,8 @@
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.kontakt.sdk.android/kontakt.io-common-sdk/2.1.1/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kontakt.sdk.android/kontakt.io-common-sdk/2.1.1/ea32788869d46c60da34590d813fa890537bcff/kontakt.io-common-sdk-2.1.1-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
