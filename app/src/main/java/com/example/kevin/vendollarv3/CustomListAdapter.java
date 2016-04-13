@@ -18,14 +18,19 @@ public class CustomListAdapter extends ArrayAdapter<String> {
     final Activity context;
     private final ArrayList<String> itemname;
     private final ArrayList<Integer> imgid;
+    private final ArrayList<String> desc;
 
-    public CustomListAdapter(Activity context, ArrayList<String> itemname, ArrayList<Integer> imgid) {
+    public CustomListAdapter(Activity context,
+                             ArrayList<String> itemname,
+                             ArrayList<Integer> imgid,
+                             ArrayList<String> desc) {
         super(context, R.layout.content_coupon_list, itemname);
         // TODO Auto-generated constructor stub
 
-        this.context=context;
-        this.itemname=itemname;
-        this.imgid=imgid;
+        this.context = context;
+        this.itemname = itemname;
+        this.imgid = imgid;
+        this.desc = desc;
     }
 
 
@@ -39,7 +44,8 @@ public class CustomListAdapter extends ArrayAdapter<String> {
 
         txtTitle.setText(itemname.get(position));
         imageView.setImageResource(imgid.get(position));
-        extratxt.setText("Description "+itemname.get(position));
+        extratxt.setText(desc.get(position));
+
         return rowView;
 
     };

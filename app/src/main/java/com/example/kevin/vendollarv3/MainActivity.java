@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
     private static final String TAG = MainActivity.class.getSimpleName();
     private ProximityManagerContract proximityManager;
     String beaconString;
+    int price;
     boolean foundCount = true;
     ArrayList<String> couponList = new ArrayList<String>();
     private static Context context;
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
 
     public ArrayList<String> couponName = new ArrayList<String>();
     public ArrayList<Integer> couponImg= new ArrayList<Integer>();
+    public ArrayList<String> couponDesc = new ArrayList<String>();
     private View b;
     //Context context = (Context)this;
 
@@ -155,17 +157,29 @@ public class MainActivity extends AppCompatActivity implements ProximityManager.
         builder.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                TextView tv = (TextView)findViewById(R.id.textView2);
+
                 // User Accepted the coupon
                 if (whichCoupon) {
-                    couponName.add("Coupon 2");
+                    couponName.add("Western NC Farms");
                     couponImg.add(R.drawable.coupon2);
+                    couponDesc.add("$2.00 off!");
+
+                    price += 2;
+                    tv.setText("Total Saved: $" + price + ".00");
+                    tv.invalidate();
                 } else {
-                    couponName.add("Coupon 1");
+                    couponName.add("Grace Hill Farms");
                     couponImg.add(R.drawable.coupon1);
+                    couponDesc.add("$1.00 off!");
+
+                    price += 1;
+                    tv.setText("Total Saved: $" + price + ".00");
+                    tv.invalidate();
                 }
 
                 lv = (ListView) findViewById(R.id.couponListView);
-                adapter = new CustomListAdapter(activity, couponName, couponImg);
+                adapter = new CustomListAdapter(activity, couponName, couponImg, couponDesc);
                 lv.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
